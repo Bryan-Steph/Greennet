@@ -8,31 +8,84 @@
   <link rel="stylesheet" href="./assets/bootstrap-icons/bootstrap-icons.min.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Green<span>Net</span></div>
-
-    <nav id="nav-menu" class="nav-menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#" >Login</a></li>
-        <li><a href="#">Register</a></li>
-      </ul>
-    </nav>
-    
-
-    <div class="nav-icons">
-      <a href="#"><i class="bi bi-search"></i></a>
-      <a href="#"><i class="bi bi-person"></i></a>
-      <a href="#"><i class="bi bi-heart"></i></a>
-      <a href="#"><i class="bi bi-cart"></i></a>
-      <button class="hamburger" onclick="toggleMenu()">
-        <i class="bi bi-list"></i>
-      </button>
+  <header class="header">
+    <div class="top-bar">
+        <div class="location-info">
+            <i class="bi bi-geo-alt"></i>
+            <span>Location: Desk</span>
+        </div>
+        
+        <div class="contact-info">
+            <span>Not line: 683 538 004</span>
+            <a href="" style="text-decoration: none;"><span style="color: #0f3b2a; font-weight: 600;">Logo or Register</span>
+            </a>
+        </div>
     </div>
-  </header>
+    
+    <nav class="navbar">
+        <div class="brand">
+            <h1>Green<span style="color: #00ff99;">Net</span>
+            </h1>
+        </div>
+        
+        <button class="navbar-toggler" >
+            <i class="bi bi-list"></i>
+        </button>
+        
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Home 
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Shop <i class="bi bi-chevron-down"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Product <i class="bi bi-chevron-down"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    About Vendors <i class="bi bi-chevron-down"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Pages <i class="bi bi-chevron-down"></i>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search for items..." class="search-input">
+            <button class="search-btn">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        
+        <div class="action-icons">
+            <a href="#" class="action-icon" aria-label="Compare">
+                <i class="bi bi-arrow-left-right"></i>
+                <span class="badge">0</span>
+            </a>
+            <a href="#" class="action-icon" aria-label="Wishlist">
+                <i class="bi bi-heart"></i>
+                <span class="badge">0</span>
+            </a>
+            <a href="#" class="action-icon" aria-label="Account">
+                <i class="bi bi-person"></i>
+            </a>
+            <a href="#" class="action-icon" aria-label="Cart">
+                <i class="bi bi-cart"></i>
+                <span class="badge">0</span>
+            </a>
+        </div>
+    </nav>
+</header>
 
   <section class="hero-section">
     <div class="hero-content">

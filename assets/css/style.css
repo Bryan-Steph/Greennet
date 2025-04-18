@@ -353,6 +353,10 @@ body {
     color: #00ff99; 
     margin-bottom: 0.5rem;
   }
+  .nav-link.active {
+    border-bottom: 3px solid #2e7d32; 
+    color: #2e7d32;
+  }
   .hero-text h1 {
     font-size: 3rem;
     font-weight: bold;

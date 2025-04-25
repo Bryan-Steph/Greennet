@@ -320,3 +320,103 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Password Toggle
+  const passwordToggles = document.querySelectorAll('.gn-password-toggle');
+  passwordToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const input = this.parentElement.querySelector('input');
+      const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+      input.setAttribute('type', type);
+      this.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>';
+    });
+  });
+
+  // Password Validation
+  const passwordInputs = document.querySelectorAll('input[type="password"]');
+  passwordInputs.forEach(input => {
+    if (input.id.includes('Password') && !input.id.includes('Confirm')) {
+      input.addEventListener('input', function() {
+        const hints = this.parentElement.parentElement.querySelectorAll('.gn-hint');
+        const value = this.value;
+
+        // Check length
+        hints[0].classList.toggle('valid', value.length >= 8);
+
+        // Check uppercase
+        hints[1].classList.toggle('valid', /[A-Z]/.test(value));
+
+        // Check number
+        hints[2].classList.toggle('valid', /\d/.test(value));
+      });
+    }
+  });
+
+  // Form Steps
+  if (document.getElementById('registerForm')) {
+    const formSteps = document.querySelectorAll('.gn-form-step');
+    const stepButtons = document.querySelectorAll('[data-next], [data-prev]');
+
+    stepButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const currentStep = this.closest('.gn-form-step');
+        const targetStep = this.getAttribute('data-next') || this.getAttribute('data-prev');
+        
+        // Validate before proceeding
+        if (this.hasAttribute('data-next')) {
+          const inputs = currentStep.querySelectorAll('input[required], select[required]');
+          let isValid = true;
+
+          inputs.forEach(input => {
+            if (!input.value) {
+              input.focus();
+              input.style.borderColor = '#ff6b35';
+              setTimeout(() => input.style.borderColor = '#e2e8f0', 2000);
+              isValid = false;
+            }
+          });
+
+          if (!isValid) return;
+        }
+
+        // Switch steps
+        currentStep.classList.remove('active');
+        document.querySelector(`.gn-form-step[data-step="${targetStep}"]`).classList.add('active');
+
+        // Update progress
+        document.querySelectorAll('.gn-step').forEach(step => {
+          step.classList.remove('active');
+          if (parseInt(step.getAttribute('data-step')) <= parseInt(targetStep)) {
+            step.classList.add('active');
+          }
+        });
+      });
+    });
+  }
+
+  // Form Submission
+  const forms = document.querySelectorAll('.gn-auth-form');
+  forms.forEach(form => {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simulate submission
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.innerHTML = '<i class="bi bi-arrow-repeat spin"></i> Processing';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        submitBtn.innerHTML = 'Success! <i class="bi bi-check"></i>';
+        setTimeout(() => {
+          if (form.id === 'registerForm') {
+            window.location.href = 'dashboard.html';
+          } else {
+            window.location.href = 'profile.html';
+          }
+        }, 1000);
+      }, 1500);
+    });
+  });
+});

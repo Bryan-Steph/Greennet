@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenNet</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/bootstrap-icons/bootstrap-icons.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="top-bar">
+        <div class="location-info">
+            <i class="bi bi-geo-alt"></i>
+            <span>Location: Bamenda-Bambili</span>
+        </div>
+        
+        <div class="contact-info">
+            <i class="bi bi-lightning-charge-fill"></i>
+            <span>Farmer Support: 683 538 004</span>
+            <a href="login.html" style="text-decoration: none;"><span style="color: #0f3b2a; font-weight: 600;">Login </a>|
+                 <a href="register.html" style="color: #0f3b2a; font-weight: 600;text-decoration: none;">Register</a> </span>
+            </a>
+        </div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="brand">
+            <h1 style="color: black;">Green<span style="color: #00ff99;">Net</span>
+            </h1>
+        </div>
+        
+        <button class="navbar-toggler" >
+            <i class="bi bi-list"></i>
+        </button>
+        
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="i" class="nav-link active">
+                    Home 
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="shop.html" class="nav-link">
+                    Marketplace 
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Storage Pods
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                    Our impact 
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">
+                  Pages <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-link">Sustainability</a></li>
+                  <li><a href="#" class="dropdown-link">Our Partners</a></li>
+                  <li><a href="#" class="dropdown-link">Quality Standards</a></li>
+                  <li><a href="#" class="dropdown-link">Delivery Network</a></li>
+                  <li><a href="#" class="dropdown-link">Career Opportunities</a></li>
+                </ul>
+              </li>
+        </ul>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search fresh products.." class="search-input">
+            <button class="search-btn">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        
+        <div class="action-icons">
+            <a href="#" class="action-icon" aria-label="Compare">
+                <i class="bi bi-arrow-left-right"></i>
+                <span class="badge">0</span>
+            </a>
+            <a href="#" class="action-icon" aria-label="Wishlist">
+                <i class="bi bi-heart"></i>
+                <span class="badge">0</span>
+            </a>
+            <a href="#" class="action-icon" aria-label="Account">
+                <i class="bi bi-person"></i>
+            </a>
+            <a href="#" class="action-icon" aria-label="Cart">
+                <i class="bi bi-cart"></i>
+                <span class="badge">0</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<section class="gn-auth-section">
+    <div class="gn-auth-container">
+      <!-- Animated Background -->
+      <div class="gn-auth-particles">
+        <div class="gn-particle" style="--i:1; --color:#00cc88;"></div>
+        <div class="gn-particle" style="--i:2; --color:#ff6b35;"></div>
+        <div class="gn-particle" style="--i:3; --color:#2d3748;"></div>
+      </div>
+  
+      <!-- Form Container -->
+      <div class="gn-auth-card">
+        <!-- Progress Steps -->
+        <div class="gn-progress-steps">
+          <div class="gn-step active" data-step="1">
+            <div class="gn-step-circle">1</div>
+            <span>Account</span>
+          </div>
+          <div class="gn-step" data-step="2">
+            <div class="gn-step-circle">2</div>
+            <span>Profile</span>
+          </div>
+          <div class="gn-step" data-step="3">
+            <div class="gn-step-circle">3</div>
+            <span>Preferences</span>
+          </div>
+        </div>
+  
+        <!-- Registration Form -->
+        <form class="gn-auth-form" id="registerForm">
+          <!-- Step 1: Account -->
+          <div class="gn-form-step active" data-step="1">
+            <div class="gn-form-header">
+              <h3>Create Your Account</h3>
+              <p>Join GreenNet's sustainable network</p>
+            </div>
+  
+            <!-- Email -->
+            <div class="gn-form-group">
+              <label for="regEmail">Email</label>
+              <div class="gn-input-container">
+                <i class="bi bi-envelope"></i>
+                <input 
+                  type="email" 
+                  id="regEmail" 
+                  placeholder="your@email.com" 
+                  required
+                  autocomplete="username"
+                >
+              </div>
+            </div>
+  
+            <!-- Password -->
+            <div class="gn-form-group">
+              <label for="regPassword">Password</label>
+              <div class="gn-input-container">
+                <i class="bi bi-lock"></i>
+                <input 
+                  type="password" 
+                  id="regPassword" 
+                  placeholder="••••••••" 
+                  required
+                  minlength="8"
+                  autocomplete="new-password"
+                >
+                <button type="button" class="gn-password-toggle">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <!-- <div class="gn-password-hints">
+                <span class="gn-hint" data-rule="length">8+ characters</span>
+                <span class="gn-hint" data-rule="uppercase">1 uppercase</span>
+                <span class="gn-hint" data-rule="number">1 number</span>
+              </div> -->
+            </div>
+  
+            <!-- Confirm Password -->
+            <div class="gn-form-group">
+              <label for="regConfirmPassword">Confirm Password</label>
+              <div class="gn-input-container">
+                <i class="bi bi-lock-fill"></i>
+                <input 
+                  type="password" 
+                  id="regConfirmPassword" 
+                  placeholder="••••••••" 
+                  required
+                  autocomplete="new-password"
+                >
+              </div>
+            </div>
+  
+            <div class="gn-step-actions">
+              <button type="button" class="gn-step-next" data-next="2">
+                Continue <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+  
+          <!-- Step 2: Profile -->
+          <div class="gn-form-step" data-step="2">
+            <div class="gn-form-header">
+              <h3>Tell Us About Yourself</h3>
+              <p>Help us personalize your experience</p>
+            </div>
+  
+            <!-- Full Name -->
+            <div class="gn-form-group">
+              <label for="regFullName">Full Name</label>
+              <div class="gn-input-container">
+                <i class="bi bi-person"></i>
+                <input 
+                  type="text" 
+                  id="regFullName" 
+                  placeholder="John Doe" 
+                  required
+                  autocomplete="name"
+                >
+              </div>
+            </div>
+  
+            <!-- User Type -->
+            <div class="gn-form-group">
+              <label>I'm a...</label>
+              <div class="gn-radio-group">
+                <label class="gn-radio-option">
+                  <input type="radio" name="userType" value="buyer" checked>
+                  <span>Buyer</span>
+                </label>
+                <label class="gn-radio-option">
+                  <input type="radio" name="userType" value="farmer">
+                  <span>Farmer</span>
+                </label>
+                <label class="gn-radio-option">
+                  <input type="radio" name="userType" value="partner">
+                  <span>Business Partner</span>
+                </label>
+              </div>
+            </div>
+  
+            <!-- Location -->
+            <div class="gn-form-group">
+              <label for="regLocation">Location</label>
+              <div class="gn-input-container">
+                <i class="bi bi-geo-alt"></i>
+                <select id="regLocation" required>
+                  <option value="" disabled selected>Select region</option>
+                  <option value="kenya">Bamenda</option>
+                  <option value="ethiopia">Douala</option>
+                  <option value="rwanda">Yaounde</option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="gn-step-actions">
+              <button type="button" class="gn-step-prev" data-prev="1">
+                <i class="bi bi-arrow-left"></i> Back
+              </button>
+              <button type="button" class="gn-step-next" data-next="3">
+                Continue <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+  
+          <!-- Step 3: Preferences -->
+          <div class="gn-form-step" data-step="3">
+            <div class="gn-form-header">
+              <h3>Almost There!</h3>
+              <p>Set your preferences</p>
+            </div>
+  
+            <!-- Newsletter -->
+            <div class="gn-checkbox-group">
+              <input type="checkbox" id="regNewsletter" checked>
+              <label for="regNewsletter">Subscribe to our newsletter</label>
+            </div>
+  
+            <!-- Terms -->
+            <div class="gn-checkbox-group">
+              <input type="checkbox" id="regTerms" required>
+              <label for="regTerms">I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+  
+            <!-- Submit -->
+            <div class="gn-step-actions">
+              <button type="button" class="gn-step-prev" data-prev="2">
+                <i class="bi bi-arrow-left"></i> Back
+              </button>
+              <button type="submit" class="gn-auth-btn">
+                Complete Registration
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+<footer class="gn-footer">
+    <!-- Footer Top (Image + Main Content) -->
+    <div class="gn-footer-top">
+      <!-- Image Section -->
+      <div class="gn-footer-image">
+        <img src="assets/images/logo.jpg" alt="GreenNet Footer Image">
+      </div>
+  
+      <!-- Main Footer Content -->
+      <div class="gn-footer-content">
+        <div class="gn-footer-grid">
+          <!-- Column 1: About -->
+          <div class="gn-footer-col">
+            <h3 class="gn-footer-title">About GreenNet</h3>
+            <p>Transforming agriculture through technology to reduce waste and empower communities.</p>
+            <div class="gn-social-links">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+  
+          <!-- Column 2: Quick Links -->
+          <div class="gn-footer-col">
+            <h3 class="gn-footer-title">Quick Links</h3>
+            <ul class="gn-footer-links">
+              <li><a href="#">Marketplace</a></li>
+              <li><a href="#">Storage Pods</a></li>
+              <li><a href="#">Our Impact</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Quality Standards</a></li>
+            </ul>
+          </div>
+  
+          <!-- Column 3: Support -->
+          <div class="gn-footer-col">
+            <h3 class="gn-footer-title">Support</h3>
+            <ul class="gn-footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Farmer Resources</a></li>
+            </ul>
+          </div>
+  
+          <!-- Column 4: Newsletter -->
+          <div class="gn-footer-col">
+            <h3 class="gn-footer-title">Stay Updated</h3>
+            <form class="gn-footer-newsletter">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="gn-contact-info">
+              <p><i class="bi bi-envelope"></i> hello@greennet.com</p>
+              <p><i class="bi bi-telephone"></i> +254 683 538 004</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Footer Bottom (Copyright) -->
+    <div class="gn-footer-bottom">
+      <div class="gn-container">
+        <p>&copy; 2025 GreenNet. All rights reserved.</p>
+        <div class="gn-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

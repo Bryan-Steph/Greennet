@@ -141,7 +141,7 @@ body {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #fff;
+  background: #f3f3f3;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   list-style: none;
@@ -151,6 +151,7 @@ body {
   visibility: hidden;
   transition: all 0.3s ease;
   z-index: 40;
+
 }
 
 .dropdown:hover .dropdown-menu {
@@ -393,7 +394,8 @@ body {
   display: flex;
   align-items: center;
   /* background: linear-gradient(135deg, #f8f9fa 0%, #e6f7f1 100%); */
-  background-image: url("../images/back2.avif");
+  /* background-image: url('/assets/images/back2.avif'); */
+  background-image: linear-gradient(  rgb(26, 134, 26) , rgb(3, 255, 45,0.5), green);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -463,7 +465,7 @@ body {
 }
 
 .gn-hero-highlight {
-  color: #00cc88;
+  color: #fff;
   position: relative;
   display: inline-block;
 }

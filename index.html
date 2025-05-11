@@ -27,7 +27,7 @@
     
     <nav class="navbar">
         <div class="brand">
-          <a style="text-decoration: none;" href="index.html"><h1>Green<span style="color: #00ff99;">Net</span> </h1></a>
+          <a style="text-decoration: none;" href="index.html"><h1 style="color: black;">Green<span style="color: #00ff99;">Net</span> </h1></a>
         </div>
         
         <button class="navbar-toggler" >
@@ -47,26 +47,15 @@
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link">
-                    Storage Pods
+                    About Us
                 </a>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link">
-                    Our impact 
+                    Contact Us
                 </a>
             </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link">
-                  Pages <i class="bi bi-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="#" class="dropdown-link">Sustainability</a></li>
-                  <li><a href="#" class="dropdown-link">Our Partners</a></li>
-                  <li><a href="#" class="dropdown-link">Quality Standards</a></li>
-                  <li><a href="#" class="dropdown-link">Delivery Network</a></li>
-                  <li><a href="#" class="dropdown-link">Career Opportunities</a></li>
-                </ul>
-              </li>
+  
         </ul>
         
         <div class="search-container">
@@ -77,21 +66,31 @@
         </div>
         
         <div class="action-icons">
-            <a href="#" class="action-icon" aria-label="Compare">
-                <i class="bi bi-arrow-left-right"></i>
-                <span class="badge">0</span>
-            </a>
+
             <a href="#" class="action-icon" aria-label="Wishlist">
                 <i class="bi bi-heart"></i>
                 <span class="badge">0</span>
             </a>
-            <a href="#" class="action-icon" aria-label="Account">
-                <i class="bi bi-person"></i>
+            <!-- User Profile Dropdown -->
+              <div class="profile-dropdown" id="profileDropdown">
+                <div class="dropdown-header">
+                    <h4>Hi, Websoft</h4>
+                    <p>softweb@gmail.com</p>
+                </div>
+                <ul>
+                    <li><a href="#"><i class="bi bi-person"></i> View Profile</a></li>
+                    <li><a href="#"><i class="bi bi-person-circle"></i> My Profile</a></li>
+                    <li><a href="#"><i class="bi bi-wallet2"></i> My Balance</a></li>
+                    <li><a href="#"><i class="bi bi-inbox"></i> Inbox</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="bi bi-gear"></i> Account Setting</a></li>
+                    <li><a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                </ul>
+              </div>
+            <a href="#" class="action-icon" aria-label="Account" id="userprofile">
+                 <img src="assets/images/userprofile.jpeg" height="90px" >
             </a>
-            <a href="#" class="action-icon" aria-label="Cart">
-                <i class="bi bi-cart"></i>
-                <span class="badge">0</span>
-            </a>
+         
         </div>
     </nav>
 </header>
@@ -118,15 +117,15 @@
           </p>
           <div class="gn-hero-stats">
             <div class="gn-stat">
-              <span class="gn-stat-number" data-count="9">0</span>
+              <span class="gn-stat-number" data-count="9" style="color: white;">0</span>
               <span class="gn-stat-label">Farmers Empowered</span>
             </div>
             <div class="gn-stat">
-              <span class="gn-stat-number" data-count="12">0</span>
+              <span class="gn-stat-number" data-count="12" style="color: white;">0</span>
               <span class="gn-stat-label">% Less Spoilage</span>
             </div>
           </div>
-          <button class="gn-hero-btn farmer-btn">
+          <button class="gn-hero-btn farmer-btn btn-down">
             Join Our Network
             <i class="bi bi-arrow-right"></i>
           </button>
@@ -150,8 +149,8 @@
           <div class="gn-seasonal-highlight">
             <div class="gn-seasonal-badge">In Season Now</div>
             <div class="gn-seasonal-item">
-              <span>🥑 Avocados</span>
-              <span>🍓 Strawberries</span>
+              <span>Yam</span>
+              <span>Casava</span>
             </div>
           </div>
           <button class="gn-hero-btn buyer-btn">
@@ -539,6 +538,74 @@
             </button>
           </div>
         </div>
+
+        <div class="gn-product-card" data-category="fruits">
+          <div class="gn-product-badge">Seasonal</div>
+          <div class="gn-product-img">
+            <img src="./assets/images/Beans.jpeg" alt="Fresh Avocados">
+          </div>
+          <div class="gn-product-info">
+            <h3>Avocados</h3>
+            <div class="gn-product-meta">
+              <span class="gn-product-origin">From Kenya</span>
+              <span class="gn-product-price">$2.99/lb</span>
+            </div>
+            <button class="gn-product-btn">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="gn-product-card" data-category="fruits">
+          <div class="gn-product-badge">Seasonal</div>
+          <div class="gn-product-img">
+            <img src="./assets/images/Beans.jpeg" alt="Fresh Avocados">
+          </div>
+          <div class="gn-product-info">
+            <h3>Avocados</h3>
+            <div class="gn-product-meta">
+              <span class="gn-product-origin">From Kenya</span>
+              <span class="gn-product-price">$2.99/lb</span>
+            </div>
+            <button class="gn-product-btn">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="gn-product-card" data-category="fruits">
+          <div class="gn-product-badge">Seasonal</div>
+          <div class="gn-product-img">
+            <img src="./assets/images/Beans.jpeg" alt="Fresh Avocados">
+          </div>
+          <div class="gn-product-info">
+            <h3>Avocados</h3>
+            <div class="gn-product-meta">
+              <span class="gn-product-origin">From Kenya</span>
+              <span class="gn-product-price">$2.99/lb</span>
+            </div>
+            <button class="gn-product-btn">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+                <div class="gn-product-card" data-category="fruits">
+          <div class="gn-product-badge">Seasonal</div>
+          <div class="gn-product-img">
+            <img src="./assets/images/Beans.jpeg" alt="Fresh Avocados">
+          </div>
+          <div class="gn-product-info">
+            <h3>Avocados</h3>
+            <div class="gn-product-meta">
+              <span class="gn-product-origin">From Kenya</span>
+              <span class="gn-product-price">$2.99/lb</span>
+            </div>
+            <button class="gn-product-btn">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+        </div>
   
         <!-- 6 more products with different categories -->
       </div>
@@ -667,12 +734,64 @@
   </div>
 </footer>
 
+
+<!-- Floating Chat Widget -->
+<div class="floating-chat-widget" id="floatingChat">
+  <div class="chat-header">
+      <span>GreenNet Assistant</span>
+      <button class="close-chat" id="closeChat">
+          <i class="bi bi-x"></i>
+      </button>
+  </div>
+  <div class="chat-content">
+      <div class="chat-message">
+          <div class="chat-avatar">
+              <i class="bi bi-robot"></i>
+          </div>
+          <div class="message-text">
+              <p>Hi! What are you looking for on GreenNet today?</p>
+          </div>
+      </div>
+  </div>
+  <div class="chat-input">
+      <input type="text" placeholder="Type your question...">
+      <button class="send-btn">
+          <i class="bi bi-send"></i>
+      </button>
+  </div>
+</div>
   
 
-  <script src="./assets/js/script.js">
- 
+     <!-- Floating Cart Button -->
+<div class="floating-cart-btn" id="floatingCartBtn">
+  <i class="bi bi-cart3"></i>
+  <span class="cart-badge">0</span>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="sidebar-header">
+      <h3>Your Cart</h3>
+      <button class="close-sidebar" id="closeSidebar">&times;</button>
+  </div>
+  <div class="cart-items">
+      <div class="empty-cart">
+          <i class="bi bi-cart-x"></i>
+          <p>Your cart is empty</p>
+      </div>
+  </div>
+  <div class="sidebar-footer">
+      <div class="cart-total">
+          <span>Total:</span>
+          <span class="total-amount">$0.00</span>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
 
 
-</script>
+  <script src="./assets/js/script.js"> </script>
 </body>
 </html>

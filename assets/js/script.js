@@ -78,7 +78,22 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
   });
-// section-2 end
+
+// User Profile Dropdown Toggle
+const userProfile = document.getElementById('userprofile');
+const profileDropdown = document.getElementById('profileDropdown');
+
+userProfile.addEventListener('click', function(e) {
+    e.preventDefault();
+    profileDropdown.classList.toggle('active');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+    if (!userProfile.contains(e.target) && !profileDropdown.contains(e.target)) {
+        profileDropdown.classList.remove('active');
+    }
+});
 
 
 
@@ -101,23 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
   
-  // Dropdown functionality
-  const dropdowns = document.querySelectorAll('.dropdown');
-  
-  dropdowns.forEach(dropdown => {
-      const link = dropdown.querySelector('.nav-link');
-      
-      link.addEventListener('click', function(e) {
-          if (window.innerWidth < 992) {
-              e.preventDefault();
-              const submenu = this.nextElementSibling;
-              
-              if (submenu) {
-                  submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-              }
-          }
-      });
-  });
+
 
   // Action icons functionality
   const actionIcons = document.querySelectorAll('.action-icon');
@@ -126,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
       icon.addEventListener('click', function(e) {
           e.preventDefault();
           const ariaLabel = this.getAttribute('aria-label');
-          alert(`${ariaLabel} clicked!`);
           // In a real application, you would handle each action accordingly
       });
   });
@@ -420,3 +418,119 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Floating Cart Functionality
+const floatingCartBtn = document.getElementById('floatingCartBtn');
+const cartSidebar = document.getElementById('cartSidebar');
+const closeSidebar = document.getElementById('closeSidebar');
+const overlay = document.getElementById('overlay');
+
+// Toggle cart sidebar
+floatingCartBtn.addEventListener('click', function() {
+    cartSidebar.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+closeSidebar.addEventListener('click', function() {
+    cartSidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+overlay.addEventListener('click', function() {
+    cartSidebar.classList.remove('active');
+    this.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+// Sample function to add items to cart (can be connected to your backend)
+function addToCart(product) {
+    const cartBadge = document.querySelector('.cart-badge');
+    let count = parseInt(cartBadge.textContent);
+    cartBadge.textContent = count + 1;
+    
+    // Update cart sidebar
+    updateCartSidebar(product);
+}
+
+function updateCartSidebar(product) {
+    const emptyCart = document.querySelector('.empty-cart');
+    if (emptyCart) {
+        emptyCart.remove();
+    }
+    
+    const cartItems = document.querySelector('.cart-items');
+    const cartItem = document.createElement('div');
+    cartItem.className = 'cart-item';
+    cartItem.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" class="cart-item-img">
+        <div class="cart-item-details">
+            <h4 class="cart-item-title">${product.name}</h4>
+            <p class="cart-item-price">$${product.price.toFixed(2)}</p>
+        </div>
+        <button class="cart-item-remove">&times;</button>
+    `;
+    cartItems.appendChild(cartItem);
+    
+    // Update total
+    updateCartTotal();
+    
+    // Add remove functionality
+    cartItem.querySelector('.cart-item-remove').addEventListener('click', function() {
+        cartItem.remove();
+        const cartBadge = document.querySelector('.cart-badge');
+        let count = parseInt(cartBadge.textContent);
+        cartBadge.textContent = Math.max(0, count - 1);
+        updateCartTotal();
+        
+        // Show empty cart if no items left
+        if (document.querySelectorAll('.cart-item').length === 0) {
+            cartItems.innerHTML = `
+                <div class="empty-cart">
+                    <i class="bi bi-cart-x"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            `;
+        }
+    });
+}
+
+function updateCartTotal() {
+    // This would calculate the total from all items in the cart
+    const totalElement = document.querySelector('.total-amount');
+    // In a real app, you would sum all item prices
+    totalElement.textContent = '$0.00'; 
+}
+
+// Example usage (remove in production):
+// addToCart({
+//     name: 'Organic Avocados',
+//     price: 4.99,
+//     image: 'https://via.placeholder.com/60'
+// });
+
+
+// Simple chat widget that always shows after 3 seconds
+document.addEventListener('DOMContentLoaded', function() {
+  const chat = document.getElementById('floatingChat');
+  const closeBtn = document.getElementById('closeChat');
+  
+  // Always show after 3 seconds (remove any storage checks)
+  setTimeout(function() {
+    chat.style.display = 'block';
+    setTimeout(function() {
+      chat.classList.add('active');
+    }, 10);
+  }, 3000);
+  
+  // Close button functionality
+  closeBtn.addEventListener('click', function() {
+    chat.classList.remove('active');
+    setTimeout(function() {
+      chat.style.display = 'none';
+    }, 400);
+  });
+});
+
+

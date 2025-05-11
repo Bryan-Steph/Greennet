@@ -401,27 +401,7 @@ body {
   transform: scale(1.1);
 }
 
-.profile-dropdown {
-  position: absolute;
-  top: 120%;
-  right: 2rem;
-  background-color: white;
-  width: 250px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  z-index: 1001;
-  border: 1px solid rgba(0,0,0,0.1);
-}
 
-.profile-dropdown.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
 .dropdown-header {
   padding: 1rem;
@@ -439,7 +419,38 @@ body {
   font-size: 0.8rem;
   opacity: 0.8;
 }
+.profile-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 2rem;
+  background-color: white;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  border: 1px solid rgba(0,0,0,0.1);
+}
 
+.profile-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+}
+.profile-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 .profile-dropdown ul {
   list-style: none;
   padding: 0.5rem 0;
@@ -475,17 +486,52 @@ body {
 }
 
 /* Mobile adjustments */
+/* Mobile Profile Dropdown - Add these to your existing CSS */
 @media (max-width: 768px) {
   .profile-dropdown {
-      right: 1rem;
-      width: 220px;
+    position: fixed;
+    top: auto !important;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 12px 12px 0 0 !important;
+    transform: none !important;
+    transition: bottom 0.3s ease;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    z-index: 1001;
   }
-  .header {
-    position: relative;;
+
+  .profile-dropdown::before {
+    display: none; /* Hide the arrow on mobile */
+  }
+
+  .profile-dropdown.active {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile overlay */
+  .profile-dropdown-overlay {
+    position: fixed;
     top: 0;
-    z-index: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .profile-dropdown-overlay.active {
+    opacity: 1;
+    visibility: visible;
   }
 }
+
 /* USERPROFILE END */
 
 /* ANOTHER HERO TESTING WEBSOFT*/
@@ -997,6 +1043,49 @@ body {
   .gn-map-visual {
     width: 100%;
   }
+  .header {
+    position: static !important; /* Remove fixed positioning */
+  }
+  
+  .navbar {
+    position: static !important;
+  }
+  .profile-dropdown {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 12px 12px 0 0;
+    transform: none;
+    transition: bottom 0.3s ease;
+    z-index: 1001;
+  }
+  
+  .profile-dropdown.active {
+    bottom: 0;
+  }
+  
+  .profile-dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-dropdown-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -2919,5 +3008,50 @@ body {
       bottom: 1rem;
       width: calc(100% - 2rem);
       max-width: 300px;
+  }
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #00ff99; /* Your GreenNet primary color */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 100px;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: #00e68a; /* Slightly darker shade for hover */
+  transform: translateY(-3px);
+}
+
+/* Adjust position on mobile if needed */
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 70px; /* Adjust based on your footer height */
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 20px;
   }
 }
